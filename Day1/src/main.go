@@ -6,10 +6,15 @@ import (
 	"strings"
 )
 
+func ShouldAdd(s string) bool {
+	if strings.Contains(s, "-") {
+		return false
+	}
+	return true
+}
+
 func main() {
 	fileName := "frequency.txt"
-	fmt.Println("Henlo")
-
 	file, err := ioutil.ReadFile(fileName)
 
 	if err != nil {
@@ -22,8 +27,4 @@ func main() {
 		fmt.Println(splitString[0])
 
 	}
-}
-
-func ShouldAdd(s string) bool {
-
 }
