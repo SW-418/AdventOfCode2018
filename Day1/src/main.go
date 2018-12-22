@@ -3,15 +3,9 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"strconv"
 	"strings"
 )
-
-func ShouldAdd(s string) bool {
-	if strings.Contains(s, "-") {
-		return false
-	}
-	return true
-}
 
 func main() {
 	fileName := "frequency.txt"
@@ -22,9 +16,14 @@ func main() {
 	} else {
 		unsplitString := string(file)
 		splitString := strings.Split(unsplitString, "\n")
-		fmt.Println(splitString)
-		fmt.Println(" ")
-		fmt.Println(splitString[0])
-
+		resultingFrequency := 0
+		for index := 0; index < len(splitString); index++ {
+			stringConversion, err := strconv.Atoi(splitString[index])
+			if err != nil {
+				fmt.Println(err)
+			}
+			resultingFrequency += stringConversion
+		}
+		fmt.Println(resultingFrequency)
 	}
 }
