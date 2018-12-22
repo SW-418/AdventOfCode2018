@@ -2,13 +2,13 @@ package main
 
 import "testing"
 
-func TestShouldAddAddition(t *testing.T) {
+func Test_ShouldAdd_AdditionShouldReturnTrue(t *testing.T) {
 	if ShouldAdd("+3") != true {
 		t.Error("+3 should return true")
 	}
 }
 
-func TestShouldAddSubtraction(t *testing.T) {
+func Test_ShouldAdd_SubtractionShouldReturnFalse(t *testing.T) {
 	if ShouldAdd("-3") == true {
 		t.Error("-3 should return false")
 	}
