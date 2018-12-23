@@ -25,13 +25,13 @@ func main() {
 				fmt.Println(err)
 			}
 			resultingFrequency += stringConversion
-			if frequencyMap[stringConversion] != 0 {
+			if frequencyMap[resultingFrequency] != 0 {
 				duplicateFrequencyFound = true
 			} else {
-				frequencyMap[stringConversion] = 1
+				frequencyMap[resultingFrequency] = 1
 			}
 			if index == len(splitString)-1 {
-				index = 0
+				index = -1
 			}
 		}
 		fmt.Println(resultingFrequency)
